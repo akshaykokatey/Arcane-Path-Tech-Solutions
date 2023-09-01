@@ -4,11 +4,8 @@
         <loc>https://www.arcanepathtech.codes/404.html</loc>
     </url>
     <url>
-        <loc>https://www.arcanepathtech.codes/404-1.html</loc>
-    </url>
-<!--     <url>
         <loc>https://www.arcanepathtech.codes/aboutus.html</loc>
-    </url> -->
+    </url>
     <url>
         <loc>https://www.arcanepathtech.codes/contacts.html</loc>
     </url>
@@ -17,8 +14,5 @@
     </url>
     <url>
         <loc>https://www.arcanepathtech.codes/internship.html</loc>
-    </url>
-    <url>
-        <loc>https://www.arcanepathtech.codes/testimonials.html</loc>
     </url>
 </urlset>
