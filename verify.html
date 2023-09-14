@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href=".assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src=""></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header class="header">
+
+        <a href="https://www.arcanepathtech.codes/" class="logo"><img src=".assets/img/brand logo.png" height="30px" width="30px"><b> ARCANE PATH TECH SOLUTIONS</b></a>
+
+
+        <div class="fas fa-bars"></div>
+
+
+    </header>
+
+    <div class="container">
+        <div class="title">Certificate Verification</div>
+        <div class="content">
+            <form action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Certificate Id</span>
+                        <input type="text" id="cid" placeholder="Enter in the form APT/AA/IT0000" required
+                            autocomplete="off">
+                    </div>
+                </div>
+
+        </div>
+        <button id="btncls" class="buttonload" onclick="validate()">
+            Verify
+        </button>
+        </form>
+    </div>
+    </div>
+
+</body>
+<script>
+    function verified() {
+        location.href = './validated.html';
+    }
+
+    function validate() {
+        var x = document.getElementById("cid").value.toLowerCase();
+        if (!x) {
+            alert("Certificate Id cannot be empty");
+        }
+        else {
+            confirm("Do you want to confirm")
+            var btn = document.getElementById("btncls");
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Loading';
+            var ind = x.indexOf("/it");
+            var ind2 = x.indexOf("apt/");
+            if ((x.length > 9 && x.length < 14) && (x.includes('apt/')) && (x.includes("/it")) && (ind == 6) && (ind2 == 0)) {
+
+                const tout = setTimeout(verified, 4000);
+
+            }
+
+
+
+            else {
+                const itout = setTimeout(() => {
+                    alert("Your Certificate in not verified");
+                    location.reload();
+                }, 4000);
+
+            }
+
+        }
+
+    }
+</script>
+
+</html>
