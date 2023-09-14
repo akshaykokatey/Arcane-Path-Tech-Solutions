@@ -2,10 +2,7 @@ body{
     /* background: rgb(255, 255, 255) ; */
     background-color: #fdfae7;
     background-image: linear-gradient(315deg, #fde7f9 0%, #aacaef 74%);
-  
-    
-    
-  
+
   }
   
   /* Header */
@@ -61,17 +58,7 @@ body{
     font-size: 3rem;
     display: none;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   .popup{
       position: fixed;
       top: 50%;
@@ -194,7 +181,7 @@ body{
       }
   
       #preloader{
-        background: #CAD5F3  url('.assets/img/reload.gif') no-repeat center;
+        background: #CAD5F3  url('./assets/img/reload.gif') no-repeat center;
         background-size:80% ;
         max-width: 100%;
         height: auto;
@@ -216,7 +203,7 @@ body{
     /* preloader */
   
     #preloader{
-      background: #fdfae7  url('.assets/img/reload.gif') no-repeat center;
+      background: #fdfae7  url('./assets/img/reload.gif') no-repeat center;
       height: 100vh;
       width: 100%;
       position: fixed;
