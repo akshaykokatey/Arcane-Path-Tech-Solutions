@@ -256,8 +256,10 @@
   max-width: 100%;
 }
 
+.quote{
 
-
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 .swiper-pagination {
   /* position: static; */
