@@ -1,9 +1,13 @@
-// /**
-//   Swiper:testimonials
-//   https://swiperjs.com/
-// **/
-const swiper = new Swiper(".swiperCarousel", {
-  slidesPerView: 3,
+
+const swiperContainer = ".swiperCarousel";
+const slidesPerViewOptions = {
+  largeScreen: 3,
+  mediumScreen: 1.5,
+  smallScreen: 1,
+};
+
+let swiperConfig = {
+  slidesPerView: slidesPerViewOptions.smallScreen,
   centeredSlides: true,
   spaceBetween: 10,
   keyboard: {
@@ -18,20 +22,29 @@ const swiper = new Swiper(".swiperCarousel", {
     prevEl: ".swiper-button-prev",
   },
   autoplay: {
-    delay: 3000, // 2000 milliseconds (2 seconds) between each slide
-    disableOnInteraction: false, // Prevent autoplay from stopping on user interaction
+    delay: 3000,
+    disableOnInteraction: false,
   },
-});
+};
 
+if (window.innerWidth >= 769) {
+  swiperConfig.slidesPerView = slidesPerViewOptions.largeScreen;
+} else if (window.innerWidth <= 768 && window.innerWidth >= 481) {
+  swiperConfig.slidesPerView = slidesPerViewOptions.mediumScreen;
+} else if (window.innerWidth <= 480) {
+  swiperConfig.slidesPerView = slidesPerViewOptions.smallScreen;
+}
+
+const defaultSwiper = new Swiper(swiperContainer, swiperConfig);
 
 const slides = document.getElementsByClassName("swiper-slide");
 for (const slide of slides) {
   slide.addEventListener("click", () => {
     const { className } = slide;
     if (className.includes("swiper-slide-next")) {
-      swiper.slideNext();
+      defaultSwiper.slideNext();
     } else if (className.includes("swiper-slide-prev")) {
-      swiper.slidePrev();
+      defaultSwiper.slidePrev();
     }
   });
 }
@@ -45,7 +58,7 @@ function resizeTextToFit() {
   textFit(quoteEls, { maxFontSize: 14 });
 }
 resizeTextToFit();
+
 addEventListener("resize", (event) => {
   resizeTextToFit();
 });
-
