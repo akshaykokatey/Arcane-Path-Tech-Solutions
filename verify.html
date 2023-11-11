@@ -12,6 +12,30 @@
 </head>
 
 <body>
+    <script>document.addEventListener('keydown', function () {
+            if (event.keyCode == 123) {
+                alert("This function has been disabled by admin");
+                return false;
+            } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+                alert("This function has been disabled by admin");
+                return false;
+            } else if (event.ctrlKey && event.keyCode == 85) {
+                alert("This function has been disabled by admin");
+                return false;
+            }
+        }, false);
+
+        if (document.addEventListener) {
+            document.addEventListener('contextmenu', function (e) {
+                alert("This function has been disabled by admin");
+                e.preventDefault();
+            }, false);
+        } else {
+            document.attachEvent('oncontextmenu', function () {
+                alert("This function has been disabled by admin");
+                window.event.returnValue = false;
+            });
+        }</script>
     <header class="header">
 
         <a href="https://www.arcanepathtech.codes/" class="logo"><img src="./assets/img/brand logo.png" height="30px" width="30px"><b> ARCANE PATH TECH SOLUTIONS</b></a>
@@ -43,6 +67,7 @@
     </div>
 
 </body>
+    
 <script>
     function verified() {
         location.href = './validated.html';
