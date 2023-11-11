@@ -160,6 +160,31 @@
 </head>
 
 <body>
+    <script>document.addEventListener('keydown', function () {
+            if (event.keyCode == 123) {
+                alert("This function has been disabled by admin");
+                return false;
+            } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+                alert("This function has been disabled by admin");
+                return false;
+            } else if (event.ctrlKey && event.keyCode == 85) {
+                alert("This function has been disabled by admin");
+                return false;
+            }
+        }, false);
+
+        if (document.addEventListener) {
+            document.addEventListener('contextmenu', function (e) {
+                alert("This function has been disabled by admin");
+                e.preventDefault();
+            }, false);
+        } else {
+            document.attachEvent('oncontextmenu', function () {
+                alert("This function has been disabled by admin");
+                window.event.returnValue = false;
+            });
+        }
+    </script>
     <nav class="navbar navbar-expand-md fixed-top bg-primary-subtle navbar-shrink py-3 navbar-light" id="mainNav"
         style="margin-left: 0px;margin-right: -689px;padding-left: 0px;padding-right: 687px;margin-bottom: -18px;padding-bottom: 0px;padding-top: 21px;"
         data-bs-theme="light">
